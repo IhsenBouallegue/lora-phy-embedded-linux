@@ -1,0 +1,16 @@
+[package]
+name = "lora-phy-embedded-linux"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+# switch back https://github.com/golemparts/rppal.git once Update embedded-hal to 1.0.0-rc.2 is merged
+rppal = { git = "https://github.com/reitermarkus/rppal.git", features = [
+    "hal",
+], rev = "2e7477aa4c32ca98a6b89b045143467eccf3be0d" }
+lora-phy = { git = "https://github.com/lora-rs/lora-rs.git", rev = "d86786988a4a446963d1e85e3ab99a225734cedd" }
+embedded-hal = { version = "=1.0.0-rc.2" }
+embedded-hal-async = { version = "=1.0.0-rc.2" }
