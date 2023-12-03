@@ -190,7 +190,7 @@ dependencies = [
 [[package]]
 name = "rppal"
 version = "0.15.0"
-source = "git+https://github.com/reitermarkus/rppal.git?rev=2e7477aa4c32ca98a6b89b045143467eccf3be0d#2e7477aa4c32ca98a6b89b045143467eccf3be0d"
+source = "git+https://github.com/golemparts/rppal.git?rev=c237b481bf763f76b10328dfbd4edf543e9907f6#c237b481bf763f76b10328dfbd4edf543e9907f6"
 dependencies = [
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0-rc.2",
