@@ -13,3 +13,7 @@ rppal = { git = "https://github.com/golemparts/rppal.git", features = [
 lora-phy = { git = "https://github.com/lora-rs/lora-rs.git", rev = "d86786988a4a446963d1e85e3ab99a225734cedd" }
 embedded-hal = { version = "=1.0.0-rc.2" }
 embedded-hal-async = { version = "=1.0.0-rc.2" }
+embedded-hal-02 = { package = "embedded-hal", version = "0.2.6", features = [
+    "unproven",
+] }
+tokio = { version = "1", features = ["full"] }
