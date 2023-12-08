@@ -9,7 +9,6 @@ use lora_phy::mod_traits::InterfaceVariant;
 pub struct GenericSx127xInterfaceVariant<CTRL, WAIT> {
     reset: CTRL,
     dio1: WAIT,
-    busy: WAIT,
     rf_switch_rx: Option<CTRL>,
     rf_switch_tx: Option<CTRL>,
 }
@@ -23,14 +22,12 @@ where
     pub fn new(
         reset: CTRL,
         dio1: WAIT,
-        busy: WAIT,
         rf_switch_rx: Option<CTRL>,
         rf_switch_tx: Option<CTRL>,
     ) -> Result<Self, RadioError> {
         Ok(Self {
             reset,
             dio1,
-            busy,
             rf_switch_rx,
             rf_switch_tx,
         })
@@ -51,7 +48,7 @@ where
         Ok(())
     }
     async fn wait_on_busy(&mut self) -> Result<(), RadioError> {
-        self.busy.wait_for_low().await.map_err(|_| Busy)
+        Ok(())
     }
     async fn await_irq(&mut self) -> Result<(), RadioError> {
         self.dio1.wait_for_high().await.map_err(|_| DIO1)?;

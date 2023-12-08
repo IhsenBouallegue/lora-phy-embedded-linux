@@ -7,9 +7,7 @@ edition = "2021"
 
 
 [dependencies]
-rppal = { git = "https://github.com/golemparts/rppal.git", features = [
-    "hal",
-], rev = "c237b481bf763f76b10328dfbd4edf543e9907f6" }
+rppal = { path = "../rppal", features = ["hal", "hal-unproven"] }
 lora-phy = { git = "https://github.com/lora-rs/lora-rs.git", rev = "d86786988a4a446963d1e85e3ab99a225734cedd" }
 embedded-hal = { version = "=1.0.0-rc.2" }
 embedded-hal-async = { version = "=1.0.0-rc.2" }
@@ -17,3 +15,4 @@ embedded-hal-02 = { package = "embedded-hal", version = "0.2.6", features = [
     "unproven",
 ] }
 tokio = { version = "1", features = ["full"] }
+embedded-hal-bus = { version = "0.1.0-rc.2", features = ["async", "std"] }
