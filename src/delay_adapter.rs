@@ -10,13 +10,6 @@ impl<T> WithDelayNs<T> {
     }
 }
 
-// impl<T> embedded_hal::digital::ErrorType for WithDelayNs<T>
-// where
-//     T: embedded_hal::digital::ErrorType,
-// {
-//     type Error = T::Error;
-// }
-
 impl<T> lora_phy::DelayNs for WithDelayNs<T>
 where
     T: embedded_hal::delay::DelayNs,

@@ -28,17 +28,19 @@ where
     }
 
     async fn write(&mut self, data: &[u8]) -> Result<(), Self::Error> {
+        println!("write: {:02X?}", data);
         self.wrapped.write(data)?;
         Ok(())
     }
 
     async fn read(&mut self, data: &mut [u8]) -> Result<(), Self::Error> {
         self.wrapped.transfer(data)?;
+        println!("read: {:02X?}", data);
+
         Ok(())
     }
 
     async fn transfer(&mut self, read: &mut [u8], write: &[u8]) -> Result<(), Self::Error> {
-        // Ensure we write the expected bytes
         for i in 0..core::cmp::min(read.len(), write.len()) {
             read[i] = write[i].clone();
         }

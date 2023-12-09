@@ -16,3 +16,4 @@ embedded-hal-02 = { package = "embedded-hal", version = "0.2.6", features = [
 ] }
 tokio = { version = "1", features = ["full"] }
 embedded-hal-bus = { version = "0.1.0-rc.2", features = ["async", "std"] }
+spidev = "0.6.0"
